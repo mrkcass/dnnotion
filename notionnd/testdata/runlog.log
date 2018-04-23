@@ -1,0 +1,231 @@
+    hyper parameters
+        param da : 121212
+        param db : [0.598, 0.5]
+        param dc : 20000
+        param de : False
+        param df : 3
+        param di : 600002
+        param dl : dont_care
+        param dm : 0
+        param dn : 8
+        param do : alternate
+        param dr : 0.25
+        param ds : ../../data/current4/bug_scrape_500000_676000_corpus_peopled_csv.txt
+        param dw : [0.5, 0.566]
+        param dx : 90
+        param fa : sigmoid
+        param fb : 0.0
+        param fd : 0.0
+        param ff : 1.0
+        param fm : FAN_AVG
+        param fu : False
+        param fw : 0
+        param ld : 1.0
+        param le : 0.001
+        param li : 0536
+        param lp : logs/bugresNet1/past
+        param lr : 0.0002
+        param ls : logs/bugresNet1/current
+        param ma : -1
+        param md : False
+        param mt : rnn_nonstatic
+        param o1 : 0.0
+        param o2 : 0.0008
+        param oa : sigmoid
+        param ob : 1e-08
+        param of : 1.0
+        param om : FAN_AVG
+        param on : 2
+        param ou : False
+        param pd : bugresNet2
+        param pn : bugresNet2
+        param ra : tanh
+        param rb : 0.7
+        param rc : gru
+        param rd : 0.3
+        param ro : output
+        param rp : False
+        param rr : max
+        param rt : unidir
+        param rw : 90
+        param sp : trained/bugresNet1/current
+        param st : train
+        param tb : 80
+        param tc : 1
+        param td : 0.61
+        param te : 0.63
+        param tf : 300
+        param tg : 0.52
+        param th : True
+        param ti : 0.5
+        param tj : 0.393
+        param tk : 0.001
+        param tl : softmax_cross_entropy
+        param tm : True
+        param to : Adam
+        param tr : 30
+        param ts : 30
+        param tt : 40
+        param tv : 1.6.0
+        param wa : linear
+        param wc : True
+        param wd : 0.0
+        param we : 0.001
+        param wl : True
+        param wn : layer
+        param ws : 175
+        param wv : ../../data/current4/wordvectors_175
+        param wy : 0.999
+    loading dataset...
+    Reading ../../data/current4/bug_scrape_500000_676000_corpus_peopled_csv.txt
+      read ../../data/current4/bug_scrape_500000_676000_corpus_peopled_csv.txt examples
+    Removing examples with id less than 600002
+      Examples: removed 82100. remaining = 55355
+    Removing low frequency words limit = 3 words
+      Pruned: words 47887. examples = 0
+    Removing examples with less than 8 words
+      Truncation: examples truncated : 22756 (42.37%)
+      Padding: examples padded       : 30773 (57.29%)
+               pad words             : 1344188 (27.81%)
+      Examples: removed 1645. remaining = 53710
+    Assemblying final dataset
+      ranges bug       : first= 600003  last= 640976  count= 20500   step= 1.87
+      ranges not_a_bug : first= 600002  last= 640977  count= 10000   step= 1.00
+      Training set size= 15980 (0.76)
+        bug       = 8480 (0.53)
+        not_a_bug = 7500 (0.47)
+      Test   set   size= 5000 (0.24)
+        bug       = 2500 (0.50)
+        not_a_bug = 2500 (0.50)
+      Examples: removed = 32730 remaining = 20980
+    creating vocabulary...
+        Total words: 79349
+        train size: 15980
+        test size: 5000
+    training...
+  epoch 30  --------------------------------------------
+  TRAINING                        |  TEST
+    CONFUSION: 6409      2071     |    CONFUSION: 1303      1197
+       MATRIX: 1550      5950     |       MATRIX: 1105      1395
+   TPR /  FPR: 0.8053 / 0.2582    |   TPR /  FPR: 0.5411 / 0.4618
+   TNR /  FNR: 0.7418 / 0.1947    |   TNR /  FNR: 0.5382 / 0.4589
+   PPV /  NPV: 0.7558 / 0.7933    |   PPV /  NPV: 0.5212 / 0.5580
+   FOR /  FDR: 0.2067 / 0.2442    |   FOR /  FDR: 0.4420 / 0.4788
+  SPEC / SENS: 0.7418 / 0.8053    |  SPEC / SENS: 0.5382 / 0.5411
+  PREC / RECA: 0.7558 / 0.8053    |  PREC / RECA: 0.5212 / 0.5411
+    F1 /  ACC: 0.7797 / 0.7734    |    F1 /  ACC: 0.5310 / 0.5396
+         OK INDICATOR LOCKED 0.5000 > 0.4788
+                   STOP GOAL 0.6100 <= 0.5310
+    STEPS/sec: 649.6   LEARNRATE: 0.0002000   LOSS: 0.5841738
+  epoch 32  --------------------------------------------
+  TRAINING                        |  TEST
+    CONFUSION: 6722      1758     |    CONFUSION: 1337      1163
+       MATRIX: 1475      6025     |       MATRIX: 1155      1345
+   TPR /  FPR: 0.8201 / 0.2259    |   TPR /  FPR: 0.5365 / 0.4637
+   TNR /  FNR: 0.7741 / 0.1799    |   TNR /  FNR: 0.5363 / 0.4635
+   PPV /  NPV: 0.7927 / 0.8033    |   PPV /  NPV: 0.5348 / 0.5380
+   FOR /  FDR: 0.1967 / 0.2073    |   FOR /  FDR: 0.4620 / 0.4652
+  SPEC / SENS: 0.7741 / 0.8201    |  SPEC / SENS: 0.5363 / 0.5365
+  PREC / RECA: 0.7927 / 0.8201    |  PREC / RECA: 0.5348 / 0.5365
+    F1 /  ACC: 0.8061 / 0.7977    |    F1 /  ACC: 0.5357 / 0.5364
+         OK INDICATOR LOCKED 0.5000 > 0.4652
+                   STOP GOAL 0.6100 <= 0.5357
+    STEPS/sec: 487.5   LEARNRATE: 0.0002000   LOSS: 0.5974194
+  epoch 34  --------------------------------------------
+  TRAINING                        |  TEST
+    CONFUSION: 6707      1773     |    CONFUSION: 1322      1178
+       MATRIX: 1339      6161     |       MATRIX: 1122      1378
+   TPR /  FPR: 0.8336 / 0.2235    |   TPR /  FPR: 0.5409 / 0.4609
+   TNR /  FNR: 0.7765 / 0.1664    |   TNR /  FNR: 0.5391 / 0.4591
+   PPV /  NPV: 0.7909 / 0.8215    |   PPV /  NPV: 0.5288 / 0.5512
+   FOR /  FDR: 0.1785 / 0.2091    |   FOR /  FDR: 0.4488 / 0.4712
+  SPEC / SENS: 0.7765 / 0.8336    |  SPEC / SENS: 0.5391 / 0.5409
+  PREC / RECA: 0.7909 / 0.8336    |  PREC / RECA: 0.5288 / 0.5409
+    F1 /  ACC: 0.8117 / 0.8053    |    F1 /  ACC: 0.5348 / 0.5400
+         OK INDICATOR LOCKED 0.5000 > 0.4712
+                   STOP GOAL 0.6100 <= 0.5357
+    STEPS/sec: 546.8   LEARNRATE: 0.0002000   LOSS: 0.6019073
+  epoch 36  --------------------------------------------
+  TRAINING                        |  TEST
+    CONFUSION: 6747      1733     |    CONFUSION: 1309      1191
+       MATRIX: 1283      6217     |       MATRIX: 1139      1361
+   TPR /  FPR: 0.8402 / 0.2180    |   TPR /  FPR: 0.5347 / 0.4667
+   TNR /  FNR: 0.7820 / 0.1598    |   TNR /  FNR: 0.5333 / 0.4653
+   PPV /  NPV: 0.7956 / 0.8289    |   PPV /  NPV: 0.5236 / 0.5444
+   FOR /  FDR: 0.1711 / 0.2044    |   FOR /  FDR: 0.4556 / 0.4764
+  SPEC / SENS: 0.7820 / 0.8402    |  SPEC / SENS: 0.5333 / 0.5347
+  PREC / RECA: 0.7956 / 0.8402    |  PREC / RECA: 0.5236 / 0.5347
+    F1 /  ACC: 0.8173 / 0.8113    |    F1 /  ACC: 0.5291 / 0.5340
+         OK INDICATOR LOCKED 0.5000 > 0.4764
+                   STOP GOAL 0.6100 <= 0.5357
+    STEPS/sec: 561.9   LEARNRATE: 0.0002000   LOSS: 0.5759850
+  epoch 38  --------------------------------------------
+  TRAINING                        |  TEST
+    CONFUSION: 6804      1676     |    CONFUSION: 1320      1180
+       MATRIX: 1198      6302     |       MATRIX: 1111      1389
+   TPR /  FPR: 0.8503 / 0.2101    |   TPR /  FPR: 0.5430 / 0.4593
+   TNR /  FNR: 0.7899 / 0.1497    |   TNR /  FNR: 0.5407 / 0.4570
+   PPV /  NPV: 0.8024 / 0.8403    |   PPV /  NPV: 0.5280 / 0.5556
+   FOR /  FDR: 0.1597 / 0.1976    |   FOR /  FDR: 0.4444 / 0.4720
+  SPEC / SENS: 0.7899 / 0.8503    |  SPEC / SENS: 0.5407 / 0.5430
+  PREC / RECA: 0.8024 / 0.8503    |  PREC / RECA: 0.5280 / 0.5430
+    F1 /  ACC: 0.8256 / 0.8202    |    F1 /  ACC: 0.5354 / 0.5418
+         OK INDICATOR LOCKED 0.5000 > 0.4720
+                   STOP GOAL 0.6100 <= 0.5357
+    STEPS/sec: 545.2   LEARNRATE: 0.0002000   LOSS: 0.5515014
+  epoch 40  --------------------------------------------
+  TRAINING                        |  TEST
+    CONFUSION: 6805      1675     |    CONFUSION: 1267      1233
+       MATRIX: 1092      6408     |       MATRIX: 1118      1382
+   TPR /  FPR: 0.8617 / 0.2072    |   TPR /  FPR: 0.5312 / 0.4715
+   TNR /  FNR: 0.7928 / 0.1383    |   TNR /  FNR: 0.5285 / 0.4688
+   PPV /  NPV: 0.8025 / 0.8544    |   PPV /  NPV: 0.5068 / 0.5528
+   FOR /  FDR: 0.1456 / 0.1975    |   FOR /  FDR: 0.4472 / 0.4932
+  SPEC / SENS: 0.7928 / 0.8617    |  SPEC / SENS: 0.5285 / 0.5312
+  PREC / RECA: 0.8025 / 0.8617    |  PREC / RECA: 0.5068 / 0.5312
+    F1 /  ACC: 0.8310 / 0.8268    |    F1 /  ACC: 0.5187 / 0.5298
+         OK INDICATOR LOCKED 0.5000 > 0.4932
+                   STOP GOAL 0.6100 <= 0.5357
+    STEPS/sec: 547.4   LEARNRATE: 0.0002000   LOSS: 0.6145364
+  Training time: 00:19:39.21
+
+  dataset truths: training
+    bug       :  6722  1758
+    not_a_bug :  1475  6025
+
+    bug       :
+      precision: 0.8201
+      recall   : 0.7927
+      f1       : 0.8061
+    not_a_bug :
+      precision: 0.7741
+      recall   : 0.8033
+      f1       : 0.7885
+    overall:
+      micro-precision: 0.7977
+  dataset truths: test
+    bug       :  1337  1163
+    not_a_bug :  1155  1345
+
+    bug       :
+      precision: 0.5365
+      recall   : 0.5348
+      f1       : 0.5357
+    not_a_bug :
+      precision: 0.5363
+      recall   : 0.5380
+      f1       : 0.5371
+    overall:
+      micro-precision: 0.5364
+
+  vocab stats for set: train
+    total      words: 20308
+    common     words: 10050
+    bug        words: 5900
+    not_a_bug  words: 4358
+  vocab stats for set: test
+    total      words: 13106
+    common     words: 5716
+    bug        words: 3790
+    not_a_bug  words: 3600
+

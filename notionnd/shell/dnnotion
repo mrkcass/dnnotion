@@ -1,0 +1,30 @@
+#! /bin/bash
+
+# dnnotion engineering
+# by: mark r. cass
+# date: mar/1/2018
+# description: Bash script which automates
+
+
+project="bugresNet"
+data_dir="../../data/current4"
+model_file="notionnd.main.main"
+dataset="bug_scrape_500000_676000_corpus_peopled_csv.txt"
+
+notionnd_path="notionnd"
+source "$notionnd_path/shell/load_lib.sh"
+
+
+calc_metric()
+{
+   local metric="$1"
+   local options="$2"
+   ./dnnotion -b sweep all 2842 | grep -B 13 -E "OK.*\.4[3-4]{1}[.0-9]+$" | grep "runlogs" | awk '{ print $1}' | grep -oE "[0-9]+" | xargs -l1 -I {} bash -c "echo {};./dnnotion -p {} | grep OK"
+}
+
+
+################################################################################
+
+main $*
+#sweep_num
+#sweep_params

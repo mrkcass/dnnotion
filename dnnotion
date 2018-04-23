@@ -1,0 +1,21 @@
+#! /bin/bash
+
+# dnnotion engineering
+# by: mark r. cass
+# date: mar/1/2018
+# description: Bash script which automates
+
+
+project="bugresNet"
+data_dir="../../data/current4"
+model_file="notionnd.main.main"
+dataset="bug_scrape_500000_676000_corpus_peopled_csv.txt"
+
+notionnd_path="notionnd"
+source "$notionnd_path/shell/load_lib.sh"
+
+
+################################################################################
+main $*
+#sweep_num
+#sweep_params
